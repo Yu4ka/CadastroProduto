@@ -3,10 +3,9 @@ package dev.java10x.CadastroProduto.controller;
 import dev.java10x.CadastroProduto.dto.ProdutoDto;
 import dev.java10x.CadastroProduto.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +22,12 @@ public class ProdutoController {
     public ResponseEntity<List<ProdutoDto>> listarTodos(){
         List<ProdutoDto> produtoDtoList = produtoService.listarTodos();
         return ResponseEntity.ok(produtoDtoList);
+    }
+
+    @PostMapping("/criar")
+    public ResponseEntity<String> criarProduto(@RequestBody ProdutoDto produtoDto){
+        ProdutoDto produtoNovo = produtoService.criarProduto(produtoDto);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body("Produto novo com Id: "+ produtoNovo.getId() + " criado com sucesso!");
     }
 }

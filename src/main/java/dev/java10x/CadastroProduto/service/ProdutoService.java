@@ -25,4 +25,10 @@ public class ProdutoService {
                 .map(produtoMapper::map)
                 .collect(Collectors.toList());
     }
+
+    public ProdutoDto criarProduto(ProdutoDto produtoDto) {
+        ProdutoModel produto = produtoMapper.map(produtoDto);
+        produto = produtoRepository.save(produto);
+        return produtoMapper.map(produto);
+    }
 }
