@@ -7,6 +7,7 @@ import dev.java10x.CadastroProduto.repository.ProdutoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -30,5 +31,10 @@ public class ProdutoService {
         ProdutoModel produto = produtoMapper.map(produtoDto);
         produto = produtoRepository.save(produto);
         return produtoMapper.map(produto);
+    }
+
+    public ProdutoDto listarPorId(Long id) {
+        return produtoRepository.findById(id)
+                .map(produtoMapper::map).orElse(null);
     }
 }

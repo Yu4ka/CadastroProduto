@@ -24,10 +24,18 @@ public class ProdutoController {
         return ResponseEntity.ok(produtoDtoList);
     }
 
+    @GetMapping("/listar/{id}")
+    public ResponseEntity<ProdutoDto> listarPorId(@PathVariable Long id){
+        ProdutoDto produtoDto = produtoService.listarPorId(id);
+        return ResponseEntity.ok(produtoDto);
+    }
+
     @PostMapping("/criar")
     public ResponseEntity<String> criarProduto(@RequestBody ProdutoDto produtoDto){
         ProdutoDto produtoNovo = produtoService.criarProduto(produtoDto);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body("Produto novo com Id: "+ produtoNovo.getId() + " criado com sucesso!");
     }
+
+
 }
