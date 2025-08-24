@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProdutoMapper {
 
-    private ProdutoDto map(ProdutoModel produtoModel){
+    public ProdutoDto map(ProdutoModel produtoModel){
         ProdutoDto produtoDto = new ProdutoDto();
         produtoDto.setId(produtoModel.getId());
         produtoDto.setDescricao(produtoModel.getDescricao());
@@ -17,7 +17,7 @@ public class ProdutoMapper {
         return produtoDto;
     }
 
-    private ProdutoModel map(ProdutoDto produtoDto){
+    public ProdutoModel map(ProdutoDto produtoDto){
         ProdutoModel produtoModel = new ProdutoModel();
         produtoModel.setId(produtoDto.getId());
         produtoModel.setDescricao(produtoDto.getDescricao());
