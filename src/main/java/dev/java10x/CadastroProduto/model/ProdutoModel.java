@@ -15,10 +15,16 @@ public class ProdutoModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long Id;
+
     @Column(name = "descrição")
     private String descricao;
+
     @Column(name = "preço")
     private Double preco;
+
     @Column(name = "quantidade")
     private int quantidade;
+
+    @Column(name = "img_url")
+    private String img_url;
 }
