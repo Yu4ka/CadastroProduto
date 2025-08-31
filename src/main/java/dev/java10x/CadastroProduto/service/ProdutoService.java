@@ -52,4 +52,10 @@ public class ProdutoService {
         }
         return null;
     }
+
+    public ProdutoDto atualizarProdutoUI(ProdutoDto produtoDto) {
+        ProdutoModel produtoModel = produtoMapper.map(produtoDto);
+        produtoModel = produtoRepository.save(produtoModel);
+        return produtoMapper.map(produtoModel);
+    }
 }

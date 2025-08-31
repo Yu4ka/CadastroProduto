@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .container-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 95%;
+            margin: 20px auto 0;
+        }
+        table {
+            width: 95%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        img {
+            max-width: 50px;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+        .botoes-acao {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+        }
+        .botoes-acao a, .btn-adicionar {
+            text-decoration: none;
+            color: white;
+            padding: 6px 10px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.8em;
+            transition: background-color 0.3s ease;
+        }
+        .btn-adicionar {
+            font-size: 1em;
+            padding: 10px 15px;
+            background-color: #28a745;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .btn-adicionar:hover {
+            background-color: #218838;
+        }
+        .botoes-acao .detalhe { background-color: #2196F3; }
+        .botoes-acao .alterar { background-color: #FF9800; }
+        .botoes-acao .excluir { background-color: #F44336; }
+        .botoes-acao .detalhe:hover { background-color: #0c7cd5; }
+        .botoes-acao .alterar:hover { background-color: #e68a00; }
+        .botoes-acao .excluir:hover { background-color: #d32f2f; }
+    </style>
+</head>
+<body>
+
+<div class="container-header">
+    <h1>Lista de Produtos</h1>
+    <a th:href="@{/produto/ui/adicionar}" class="btn-adicionar">Adicionar produto</a>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Quantidade</th>
+        <th>Imagem</th>
+        <th>Fornecedor</th>
+        <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="produto : ${produtos}">
+        <td th:text="${produto.descricao}"></td>
+        <td th:text="${#numbers.formatCurrency(produto.preco)}"></td>
+        <td th:text="${produto.quantidade}"></td>
+        <td><img th:src="${produto.img_url}" alt="Imagem do produto"/></td>
+        <td th:text="${produto.fornecedorModel.nome}"></td>
+        <td class="botoes-acao">
+            <a th:href="@{/produto/ui/listar/{id}(id=${produto.id})}" class="detalhe">Detalhes</a>
+            <a th:href="@{/produto/ui/atualizar/{id}(id=${produto.id})}" class="alterar">Alterar</a>
+            <a th:href="@{/produto/ui/deletar/{id}(id=${produto.id})}" class="excluir">Excluir</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

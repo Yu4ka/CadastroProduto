@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${'Detalhes do Produto: ' + produto.descricao}"></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 70%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+        .produto-detalhes {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+        .detalhes-info {
+            flex-grow: 1;
+        }
+        .detalhes-info p {
+            font-size: 1.1em;
+            margin: 10px 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .detalhes-info p strong {
+            color: #555;
+            display: inline-block;
+            min-width: 120px;
+        }
+        .produto-imagem {
+            flex-shrink: 0;
+            width: 300px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .botoes-acao {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 10px;
+        }
+        .botoes-acao a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .voltar { background-color: #607D8B; }
+        .alterar { background-color: #FF9800; }
+
+        .voltar:hover { background-color: #455A64; }
+        .alterar:hover { background-color: #e68a00; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 th:text="${produto.descricao}"></h1>
+
+    <div class="produto-detalhes">
+        <div>
+            <img th:src="${produto.img_url}" alt="Imagem do produto" class="produto-imagem"/>
+        </div>
+
+        <div class="detalhes-info">
+            <p><strong>ID:</strong> <span th:text="${produto.id}"></span></p>
+            <p><strong>Descrição:</strong> <span th:text="${produto.descricao}"></span></p>
+            <p><strong>Preço:</strong> <span th:text="${#numbers.formatCurrency(produto.preco)}"></span></p>
+            <p><strong>Quantidade:</strong> <span th:text="${produto.quantidade}"></span></p>
+
+            <h2 style="margin-top: 25px;">Dados do Fornecedor</h2>
+            <p><strong>Nome:</strong> <span th:text="${produto.fornecedorModel.nome}"></span></p>
+            <p><strong>Email:</strong> <span th:text="${produto.fornecedorModel.email}"></span></p>
+            <p><strong>Telefone:</strong> <span th:text="${produto.fornecedorModel.telefone}"></span></p>
+        </div>
+    </div>
+
+    <div class="botoes-acao">
+        <a th:href="@{/produto/ui/listar}" class="voltar">Voltar para a lista</a>
+    </div>
+</div>
+
+</body>
+</html>
