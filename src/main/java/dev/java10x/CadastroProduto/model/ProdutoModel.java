@@ -27,4 +27,8 @@ public class ProdutoModel {
 
     @Column(name = "img_url")
     private String img_url;
+
+    @ManyToOne
+    @JoinColumn(name = "fornecedorId")
+    private FornecedorModel fornecedorModel;
 }

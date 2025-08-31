@@ -1,9 +1,9 @@
 package dev.java10x.CadastroProduto.dto;
 
+import dev.java10x.CadastroProduto.model.FornecedorModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
 
 @Data
 @NoArgsConstructor
@@ -14,4 +14,5 @@ public class ProdutoDto {
     private Double preco;
     private int quantidade;
     private String img_url;
+    private FornecedorModel fornecedorModel;
 }

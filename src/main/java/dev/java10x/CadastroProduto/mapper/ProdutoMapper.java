@@ -14,6 +14,7 @@ public class ProdutoMapper {
         produtoDto.setPreco(produtoModel.getPreco());
         produtoDto.setQuantidade(produtoModel.getQuantidade());
         produtoDto.setImg_url(produtoModel.getImg_url());
+        produtoDto.setFornecedorModel(produtoModel.getFornecedorModel());
         return produtoDto;
     }
 
@@ -24,6 +25,7 @@ public class ProdutoMapper {
         produtoModel.setPreco(produtoDto.getPreco());
         produtoModel.setQuantidade(produtoDto.getQuantidade());
         produtoModel.setImg_url(produtoDto.getImg_url());
+        produtoModel.setFornecedorModel(produtoDto.getFornecedorModel());
         return produtoModel;
     }
 }

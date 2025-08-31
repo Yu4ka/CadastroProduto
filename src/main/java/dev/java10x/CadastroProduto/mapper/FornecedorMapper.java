@@ -17,10 +17,10 @@ public class FornecedorMapper {
 
     public FornecedorModel map(FornecedorDto fornecedorDto){
         FornecedorModel fornecedorModel = new FornecedorModel();
-        fornecedorModel.setId(fornecedorModel.getId());
-        fornecedorModel.setNome(fornecedorModel.getNome());
-        fornecedorModel.setEmail(fornecedorModel.getEmail());
-        fornecedorModel.setTelefone(fornecedorModel.getTelefone());
+        fornecedorModel.setId(fornecedorDto.getId());
+        fornecedorModel.setNome(fornecedorDto.getNome());
+        fornecedorModel.setEmail(fornecedorDto.getEmail());
+        fornecedorModel.setTelefone(fornecedorDto.getTelefone());
         return fornecedorModel;
     }
 }

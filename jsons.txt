@@ -2,19 +2,76 @@
     "descricao": "Laptop Dell XPS 15",
     "preco": 8500.00,
     "quantidade": 15,
-    "img_url": "https://example.com/images/dell-xps-15.jpg"
+    "img_url": "https://example.com/images/dell-xps-15.jpg",
+    "fornecedorModel": {
+        "id": 1
+      }
 }
 
 {
     "descricao": "Smartphone Samsung Galaxy S23",
     "preco": 4500.00,
     "quantidade": 50,
-    "img_url": "https://example.com/images/galaxy-s23.jpg"
+    "img_url": "https://example.com/images/galaxy-s23.jpg",
+    "fornecedorModel": {
+        "id": 1
+      }
 }
 
 {
     "descricao": "Teclado Mecânico Logitech G Pro X",
     "preco": 750.00,
     "quantidade": 200,
-    "img_url": "https://example.com/images/logitech-g-pro-x.jpg"
+    "img_url": "https://example.com/images/logitech-g-pro-x.jpg",
+    "fornecedorModel": {
+        "id": 2
+      }
+}
+
+{
+    "descricao": "Mouse Óptico Ergonômico",
+    "preco": 85.90,
+    "quantidade": 450,
+    "img_url": "http://exemplo.com/mouse-ergonomico.jpg",
+    "fornecedorModel": {
+            "id": 1
+          }
+}
+
+{
+      "descricao": "Câmera de Segurança Full HD",
+      "preco": 420.00,
+      "quantidade": 80,
+      "img_url": "http://exemplo.com/camera-seguranca.jpg",
+      "fornecedorModel": {
+              "id": 3
+            }
+}
+
+{
+    "descricao": "Teclado Mecânico RGB",
+    "preco": 299.99,
+    "quantidade": 120,
+    "img_url": "http://exemplo.com/teclado-mecanico.jpg",
+    "fornecedorModel": {
+            "id": 2
+          }
+}
+
+{
+    "nome": "Tech Solutions Distribuidora",
+    "email": "contato@techsolutions.com",
+    "telefone": "11 98765-4321"
+}
+
+{
+    "nome": "Home Decor Atacadista",
+    "email": "vendas@homedecor.com.br",
+    "telefone": "21 91234-5678"
+}
+
+{
+    "nome": "Gourmet Foods Imports",
+    "email": "comercial@gourmetfoods.com",
+    "telefone": "31 99887-7665"
 }
