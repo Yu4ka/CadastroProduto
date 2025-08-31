@@ -1,0 +1,20 @@
+{
+    "descricao": "Laptop Dell XPS 15",
+    "preco": 8500.00,
+    "quantidade": 15,
+    "img_url": "https://example.com/images/dell-xps-15.jpg"
+}
+
+{
+    "descricao": "Smartphone Samsung Galaxy S23",
+    "preco": 4500.00,
+    "quantidade": 50,
+    "img_url": "https://example.com/images/galaxy-s23.jpg"
+}
+
+{
+    "descricao": "Teclado Mecânico Logitech G Pro X",
+    "preco": 750.00,
+    "quantidade": 200,
+    "img_url": "https://example.com/images/logitech-g-pro-x.jpg"
+}

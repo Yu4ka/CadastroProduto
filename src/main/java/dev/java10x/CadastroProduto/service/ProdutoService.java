@@ -37,4 +37,19 @@ public class ProdutoService {
         return produtoRepository.findById(id)
                 .map(produtoMapper::map).orElse(null);
     }
+
+    public void deletarProduto(Long id) {
+        produtoRepository.deleteById(id);
+    }
+
+    public ProdutoDto atualizarProduto(Long id, ProdutoDto produtoDto) {
+        Optional<ProdutoModel> produtoExistente = produtoRepository.findById(id);
+        if(produtoExistente.isPresent()){
+            ProdutoModel produtoAtualizado = produtoMapper.map(produtoDto);
+            produtoAtualizado.setId(id);
+            ProdutoModel produtoModel = produtoRepository.save(produtoAtualizado);
+            return produtoMapper.map(produtoModel);
+        }
+        return null;
+    }
 }
